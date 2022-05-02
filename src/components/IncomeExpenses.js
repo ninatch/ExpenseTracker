@@ -7,11 +7,11 @@ const IncomeExpenses = () => {
     const amounts = transactions.map(transaction => transaction.amount)
     const income = amounts
         .filter(num => num > 0)
-        .reduce((acc, item) => (acc += item))   
+        .reduce((acc, item) => (acc += item), 0)   
         .toFixed(2)
     const expense = Math.abs(amounts
         .filter(num => num < 0)
-        .reduce((acc, item) => (acc -= item))
+        .reduce((acc, item) => (acc -= item), 0)
         .toFixed(2)
         )
 
@@ -26,6 +26,7 @@ const IncomeExpenses = () => {
                     +${income}
                 </p>
             </div>
+            <div>
                 <h4>
                     Expense
                 </h4>
@@ -33,6 +34,7 @@ const IncomeExpenses = () => {
                 <p className="money minus">
                     -${expense}
                 </p>
+            </div>
         </div>
     )
 }
