@@ -1,10 +1,10 @@
-import { createContext, useReducer } from "react"
-import AppReducer from "./AppReducer"
+import { createContext, useReducer } from 'react'
+import AppReducer from './AppReducer'
 
 // initial state
 const initialState = {
     transactions: [
-        { id: 1, text: 'Test', amount: -20 },
+        // { id: 1, text: 'Test', amount: -20 },
     ]
 }
 
@@ -19,14 +19,14 @@ export const GlobalProvider = ({ children }) => {
 
     const deleteTransaction = id => {
         dispatch({
-            type: "DELETE_TRANSACTION",
+            type: 'DELETE_TRANSACTION',
             payload: id
         })
     }
 
     const addTransaction = transaction => {
         dispatch({
-            type: "ADD_TRANSACTION",
+            type: 'ADD_TRANSACTION',
             payload: transaction
         })
     }

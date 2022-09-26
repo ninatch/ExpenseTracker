@@ -1,5 +1,5 @@
-import { useContext } from "react"
-import { GlobalContext } from "../context/GlobalState"
+import { useContext } from 'react'
+import { GlobalContext } from '../context/GlobalState'
 
 const IncomeExpenses = () => {
     const { transactions } = useContext(GlobalContext)
@@ -9,20 +9,19 @@ const IncomeExpenses = () => {
         .filter(num => num > 0)
         .reduce((acc, item) => (acc += item), 0)   
         .toFixed(2)
-    const expense = Math.abs(amounts
+    const expense = amounts
         .filter(num => num < 0)
         .reduce((acc, item) => (acc -= item), 0)
         .toFixed(2)
-        )
 
     return (
-        <div className="inc-exp-container">
+        <div className='inc-exp-container'>
             <div>
                 <h4>
                     Income
                 </h4>
 
-                <p className="money plus">
+                <p className='money plus'>
                     +${income}
                 </p>
             </div>
@@ -31,7 +30,7 @@ const IncomeExpenses = () => {
                     Expense
                 </h4>
 
-                <p className="money minus">
+                <p className='money minus'>
                     -${expense}
                 </p>
             </div>
